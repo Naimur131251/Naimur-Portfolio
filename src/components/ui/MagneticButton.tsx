@@ -10,6 +10,8 @@ interface MagneticButtonProps {
   href?: string;
   target?: string;
   rel?: string;
+  /** Forces the browser to download the linked resource instead of navigating. */
+  download?: string;
   strength?: number;
   variant?: "primary" | "secondary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
@@ -22,6 +24,7 @@ export function MagneticButton({
   href,
   target,
   rel,
+  download,
   strength = 0.25,
   variant = "primary",
   size = "md",
@@ -79,6 +82,7 @@ export function MagneticButton({
           href={href}
           target={target}
           rel={rel}
+          download={download}
           className={combinedClasses}
           onClick={onClick}
         >
